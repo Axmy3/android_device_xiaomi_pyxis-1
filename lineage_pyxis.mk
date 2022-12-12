@@ -8,8 +8,23 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
+# Inherit some common Rice stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+RICE_CHIPSET := Snapdragon®710
+RICE_MAINTAINER := Axmy
+RICE_DEVICE := Mi 9 Lite
+SUSHI_BOOTANIMATION := 1080
+TARGET_BUILD_GRAPHENEOS_CAMERA := true
+TARGET_ENABLE_BLUR := true
+TARGET_HAS_UDFPS := true
+TARGET_USE_PIXEL_FINGERPRINT := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+EXTRA_UDFPS_ANIMATIONS := true
+WITH_GMS := true
 
 # Inherit from pyxis device
 $(call inherit-product, device/xiaomi/pyxis/device.mk)
@@ -21,8 +36,3 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 9 Lite
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="pyxis-user 11 RKQ1.200826.002 V12.5.3.0.RFCEUXM release-keys"
-
-BUILD_FINGERPRINT := Xiaomi/pyxis/pyxis:11/RKQ1.200826.002/V12.5.3.0.RFCEUXM:user/release-keys
